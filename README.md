@@ -1,7 +1,7 @@
 # P5.5
 ## p5.5.js is an addon for the p5.js library. It is a combination of a UI with panning and zooming and more nice things. The UI tweaks are an implementation of the [lil-gui.js](https://lil-gui.georgealways.com/) library. The hotkeys are made possible by using the [tinykeys.js](https://jamiebuilds.github.io/tinykeys/) library.
 
-![p5.5.js screenshot](./screenshots/screenshot.jpg "P5.5 Screenshot")
+![p5.5.js screenshot](./screenshot/ScreenShot.jpg "P5.5 Screenshot")
 
 P5.5.js is an extension for the P5.js library. It is a combination of a UI with panning and zooming. The UI tweaks are an implementation of the lil-gui.js library. The hotkeys are made possible by using the tinekeys.js library.
 
