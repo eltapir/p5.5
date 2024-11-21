@@ -77,6 +77,14 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
 
     ```
 
+
+### EXAMPLES: &nbsp;<span style="font-size: 0.8em; font-weight: 400;">([on p5 editor](https://editor.p5js.org/))
+
+- [Basic](https://editor.p5js.org/ElTapir/sketches/6Fk4dSbbL)
+- [All defaults](https://editor.p5js.org/ElTapir/sketches/m8fN8a5dN)
+- [Tweak](https://editor.p5js.org/ElTapir/sketches/HkED3U-Ry)
+
+
 ### OPTIONS:
     renderer: 'p2d',        // string: only 'p2d' !!! no 'webgl'
 
@@ -169,9 +177,3 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
 
     ...
 
-
-### EXAMPLES:
-
-- [Basic](https://editor.p5js.org/ElTapir/sketches/6Fk4dSbbL)
-- [All defaults](https://editor.p5js.org/ElTapir/sketches/m8fN8a5dN)
-- [Tweak](https://editor.p5js.org/ElTapir/sketches/HkED3U-Ry)
