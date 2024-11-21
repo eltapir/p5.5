@@ -5,6 +5,15 @@ P5.5.js is an extension for the P5.js library. It is a combination of a UI with 
 
 The extension is aimed at people who want to generate 2D art on a larger canvas. The panning and zooming makes it possible to always see the canvas in its entirety, or to show certain parts in detail. Exporting to a png file is just a button away.
 
+
+### CREDITS
+
+[p5.js](https://p5js.org/) : &nbsp;No p5 extension without p5 library
+
+[lil-gui](https://lil-gui.georgealways.com/) : &nbsp;Floating panel for controllers on the web
+[tinykeys](https://jamiebuilds.github.io/tinykeys/) : &nbsp;Tiny but very nice library for keybindings
+
+
 ### USAGE:
 
 1. In the index.html file, add the p5.5.js library after the p5.js library
