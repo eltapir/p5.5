@@ -166,3 +166,9 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
 
     inpx(in)                            // param #1 : size in inches
                                         // return   : size in pixels
+
+    ...
+
+
+### EXAMPLES:
+
