@@ -39,7 +39,7 @@ function setup() {
     text(`Use mouse buttons and mouse wheel to pan/zoom`, width * 0.5, height * 0.5 + mmpx(20));
 
 
-    // add a custom tweak
+    // add a custom tweak (see lil-gui docs: https://lil-gui.georgealways.com/)
     // -------------------------------------------------------------------------
     
     let gObj = {
