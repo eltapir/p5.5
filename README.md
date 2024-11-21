@@ -15,7 +15,7 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
 [tinykeys](https://jamiebuilds.github.io/tinykeys/) : &nbsp;Tiny but very nice library for keybindings
 
 
-### USAGE:
+### USAGE: &nbsp;<span style="font-size: 0.8em; font-weight: 400;">(see examples)
 
 1. In the index.html file, add the p5.5.js library after the p5.js library
     ```
@@ -163,17 +163,50 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
 
     // toggle fullscreen
     cmdFullScreenToggle: 'Shift+F'      // toggle fullscreen
-    
+
+
 ### ADDED METHODS:
 
-    mmpx(mm)                            // param #1 : size in millimeters
-                                        // return   : size in pixels
+    screenPPI()                         // return    : Pixels Per Inch of the screen
+                                        //           : depends on your settings in p5.initMetrics()
 
-    cmpx(cm)                            // param #1 : size in centimeters
-                                        // return   : size in pixels
+    exportPPI()                         // return    : Pixels Per Inch of your export file
+                                        //           : depends on your settings in p5.initMetrics()
 
-    inpx(in)                            // param #1 : size in inches
-                                        // return   : size in pixels
+    mmpx(mm, exportPPI)                 // mm        : size in millimeters
+                                        // exportPPI : export resolution
+                                        //             defaults to resolution set in p5.initMetrics()
+                                        // return    : size in pixels
 
-    ...
+    cmpx(cm, exportPPI)                 // param #1  : size in centimeters
+                                        // exportPPI : export resolution
+                                        //             defaults to resolution set in p5.initMetrics()
+                                        // return    : size in pixels
 
+    inpx(in, exportPPI)                 // param #1  : size in inches
+                                        // exportPPI : export resolution
+                                        //             defaults to resolution set in p5.initMetrics()
+                                        // return    : size in pixels
+
+    pxmm(px, exportPPI)                 // px        : size in pixels
+                                        // exportPPI : export resolution
+                                        //             defaults to resolution set in p5.initMetrics()
+                                        // return    : value in millimeters
+
+    pxcm(px, exportPPI)                 // px        : size in pixels
+                                        // exportPPI : export resolution
+                                        //             defaults to resolution set in p5.initMetrics()
+                                        // return    : value in centimeters
+
+    inmm(px, exportPPI)                 // px        : size in pixels
+                                        // exportPPI : export resolution
+                                        //             defaults to resolution set in p5.initMetrics()
+                                        // return    : value in inches
+
+    fps()                               // return    : Current Frames Per Second
+
+    zoomFactor(factor)                  // factor    : (optional) zoom factor (1.0 == 100%)
+                                        // return    : current zoom factor
+
+    wallpaperBackground(color)          // color     : (optional) color for the wallpaper
+                                        // return    : current wallpaper color
