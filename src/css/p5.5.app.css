@@ -1,0 +1,512 @@
+.app {
+
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--wallpaper-color);
+
+    display: flex;
+
+    user-select: none;
+
+    /* gui button */
+    /* ------------------------------------------------------------------------------------------ */
+
+    & .gui-button {
+
+        z-index: 3;
+        position: absolute;
+        top: var(--size-small);
+
+        width: var(--gui-button-size);
+        height: var(--gui-button-size);
+
+        filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.5));
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+
+        & .arrow {
+            
+            transform-origin: center;
+            transition: transform var(--gui-animation-speed);            
+
+            & path {
+
+                fill: var(--p5-pink);
+            }
+        }
+
+        &:hover {
+
+            opacity: 0.75;
+            scale: 1.1;
+        }
+    }
+
+    &.left {
+
+        & .gui-button {
+
+            left: var(--size-small);
+
+            & .arrow {
+
+                transform: rotate(360deg);
+            }
+        }
+
+        &.open {
+
+            & .gui-button {
+
+                & .arrow {
+
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+
+    &.right {
+
+        & .gui-button {
+
+            right: var(--size-small);
+
+            & .arrow {
+
+                transform: rotate(0deg);
+            }
+        }
+
+        &.open {
+            
+            & .gui-button {
+
+                & .arrow {
+
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+
+    /* gui */
+    /* ------------------------------------------------------------------------------------------ */
+
+    & .gui {
+
+        z-index: 2;
+    
+        height: 100%;
+        width: var(--gui-width);
+
+        & .gui-inner {
+    
+            height: 100%;
+            width: var(--gui-width);
+
+            background-color: var(--gui-background-color);
+            background-color: hsl(from var(--gui-background-color) h s calc(l * 1.25));
+    
+            transition: transform var(--gui-animation-speed);
+
+            overflow: hidden;
+        }
+    
+        & .gui-content {
+    
+            display: flex;
+            flex-direction: column;
+            
+            height: 100%;
+            max-width: 100%;
+        }
+    
+        & .gui-header,
+        & .gui-body,
+        & .gui-footer {
+
+            padding: var(--size-small) 0;
+            padding: 0;
+        }
+
+        & .gui-header,
+        & .gui-footer {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & .gui-header {
+
+            color: var(--gui-title-text-color);
+
+            & .gui-header-box {
+
+                height: calc(var(--size-small) + 2 * var(--size-normal) + var(--size-small));
+    
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                
+                background-color: var(--gui-title-background-color);
+    
+                padding: var(--size-small);
+    
+                box-shadow: var(--gui-header-shadow);
+    
+                &:last-child {
+    
+                    margin-top: 2px;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+    
+            & .title {
+
+                font-size: var(--font-size-large);
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            & .version,
+            & .pixels,
+            & .units {
+
+                font-size: var(--font-size-small);
+                letter-spacing: 1px;
+            }
+
+            & .pixels,
+            & .units {
+
+                font-family: var(--font-family-mono);
+                letter-spacing: 1px;
+            }
+
+        }
+
+        & .gui-body {
+    
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-xsmall);
+
+            margin-top: var(--size-xxsmall);
+            padding: var(--size-xsmall);
+
+            overflow: auto;
+
+            & .gui-body-content {
+
+                display: flex;
+                flex-direction: column;
+                gap: var(--size-small) !important;
+            }
+        }
+
+        & .gui-footer {
+
+            justify-content: center;
+
+            color: var(--gui-title-text-color);
+
+            height: calc(var(--size-small) + 2 * var(--size-normal) + var(--size-small));
+            
+            box-shadow: var(--gui-footer-shadow);
+
+            flex-direction: column;
+            gap: 1px;
+
+            & .gui-footer-box {
+
+                height: calc(var(--size-small) + 2 * var(--size-normal) + var(--size-small));
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+                background-color: var(--gui-title-background-color);
+
+                padding: var(--size-xsmall) 0;
+            }
+            
+            & .pixels,
+            & .units {
+                
+                font-family: var(--font-family-mono);
+                font-size: var(--font-size-s);
+                letter-spacing: 1px;
+            }
+        }
+    }
+    
+    &.left {
+
+        & .gui {
+
+            order: 0;
+
+            width: 0;
+    
+            & .gui-inner {
+
+                transform: translate(-100%, 0);
+            }
+
+            &.animating {
+
+                width: var(--gui-width) !important;
+            }
+        }
+
+        &.open {
+
+            & .gui {
+
+                width: var(--gui-width);
+                box-shadow: 5px 0px 10px rgba(64, 64, 64, 0.35);
+                
+                & .gui-inner {
+                    
+                    transform: translate(0, 0);
+                }
+                
+                &.animating {
+                    
+                    width: 0 !important;
+                }
+            }
+        }
+    }
+
+    &.right {
+
+        & .gui {
+
+            order: 2;
+            width: 0;
+
+            &.animating {
+
+                width: var(--gui-width) !important;
+
+                & .gui-inner {
+
+                    transition-duration: var(--gui-animation-speed);
+                    transform: translate(100%, 0);
+                }
+            }
+
+            & .gui-inner {
+
+                /* transition: none; */
+                transition-duration: 0ms;
+                transform: translate(0%, 0);
+            }
+
+            & .gui-header {
+
+                & .gui-header-box {
+
+                    align-items: flex-start;
+                }
+            }
+        }
+
+        &.open {
+
+            & .gui {
+
+                width: var(--gui-width);
+                box-shadow: -5px 0px 10px rgba(64, 64, 64, 0.25);
+
+                &.animating {
+                    
+                    width: 0 !important;
+
+                    & .gui-inner {
+                    
+                        transition-duration: var(--gui-animation-speed);
+                        transform: translate(-100%, 0) !important;
+                    }
+                }
+                
+                & .gui-inner {
+                    
+                    /* transition: none; */
+                    transition-duration: 0ms;
+                    transform: translate(0%, 0) !important;
+                }
+            }
+        }
+    }
+
+    /* lil-gui */
+    /* ------------------------------------------------------------------------------------------ */
+
+    & .lil-gui.root {
+        
+        border-radius: var(--gui-widget-border-radius);
+        box-shadow: var(--gui-widget-shadow);
+        overflow: hidden;
+
+        width: 100%;
+
+        &:has(.extra-bottom-margin) {
+
+            margin-bottom: var(--size-small);
+        }
+    }
+
+    & .gui-coords-wrapper {
+
+        width: 100%;
+        height: 100%;
+
+        & button {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 100%;
+
+            cursor: pointer;
+    
+            border: none;
+            outline: none;
+    
+            color: var(--gui-title-text-color);
+            background-color: var(--gui-title-background-color);
+            
+            font-size: var(--font-size-small);
+
+            user-select: none;
+
+            &:hover {
+                
+                opacity: 0.75;
+            }
+        }
+    }
+
+    & .gui-hor-btn-container {
+
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        gap: var(--gui-spacing);
+
+        padding: 0;
+    
+        & .controller {
+    
+            width: 100%;
+
+            padding: 0;
+            margin-bottom: 0;
+        }
+    
+        & button {
+    
+            height: var(--gui-icon-button-height);
+            /* border-radius: 0; */
+            margin-bottom: var(--size-tiny);
+
+            &:focus {
+
+                box-shadow: none;
+            }
+        }
+        
+        & .name {
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100%;
+    
+            font-family: "icomoon", monospace;
+            font-size: var(--gui-icon-button-font-size);
+    
+            &.text {
+    
+                font-size: var(--gui-icon-text-button-font-size);
+            }
+    
+            & .png-in-name {
+    
+                font-size: var(--font-size-small);
+            }
+        }
+    }
+
+    /* artwork */
+    /* ------------------------------------------------------------------------------------------ */
+
+    & .artwork-wrapper {
+
+        flex: 1;
+        order: 1;
+        z-index: 1;
+    
+        & .artwork {
+            
+            position: relative; /* do not change */
+    
+            width: 100%;
+            height: 100%;
+    
+            padding-top: var(--screen-padding-top);
+            padding-right: var(--screen-padding-right);
+            padding-bottom: var(--screen-padding-bottom);
+            padding-left: var(--screen-padding-left);
+    
+            overflow: hidden;
+        }
+    
+        & .artwork-content {
+    
+            position: relative; /* do not change */
+    
+            width: 100% !important;
+            height: 100% !important;
+        }
+    
+        & .canvas {
+    
+            position: absolute;
+    
+            &:active {
+                
+                cursor: grabbing;
+            }
+            
+            &:first-child {
+                
+                box-shadow: var(--canvas-shadow);
+                background: var(--canvas-background);
+            }
+        }
+    }            
+}    
+
+

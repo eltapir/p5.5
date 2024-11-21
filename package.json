@@ -1,0 +1,48 @@
+{
+  "name": "p5.5",
+  "version": "0.1.0",
+  "description": "P5 plugin, adding a UI, panning and zooming and more... ",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rm -rf lib",
+    "build": "NODE_ENV=production rollup -c --bundleConfigAsCjs",
+    "watch": "rollup -c -w --bundleConfigAsCjs"
+  },
+  "keywords": [
+    "art",
+    "canvas",
+    "coding",
+    "creative",
+    "generative",
+    "gui",
+    "p5",
+    "p5.5",
+    "pan",
+    "ui",
+    "zoom"
+  ],
+  "author": "Kris HEYSE",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "last 15 versions"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "postcss-preset-env": "^10.1.1",
+    "rollup": "^4.27.3",
+    "rollup-plugin-postcss": "^4.0.2"
+  }
+}

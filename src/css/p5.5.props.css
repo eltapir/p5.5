@@ -1,0 +1,265 @@
+/* ============================================================================================== */
+/*                                                                                                */
+/* Copyright 2024 Kris HEYSE                                                                      */
+/*                                                                                                */
+/* Licensed under the Apache License, Version 2.0 (the "License");                                */
+/* you may not use this file except in compliance with the License.                               */
+/* You may obtain a copy of the License at                                                        */
+/*                                                                                                */
+/* http: *www.apache.org/licenses/LICENSE-2.0                                                     */
+/*                                                                                                */
+/* Unless required by applicable lthis or agreed to in writing, software                          */
+/* distributed under the License is distributed on an "AS IS" BASIS,                              */
+/* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.                       */
+/* See the License for the specific language governing permissions and                            */
+/* limitations under the License.                                                                 */
+/*                                                                                                */
+/* ============================================================================================== */
+
+@font-face {
+
+    font-family: system-sans;
+    font-style: normal;
+    font-weight: normal;
+    src: 
+        local("system-ui"),
+        local("-apple-system"),
+        local("BlinkMacSystemFont"),
+        local("Segoe UI"),
+        local("Liberation Sans"),
+        local("Roboto"),
+        local("Oxygen-Sans"),
+        local("Ubuntu"),
+        local("Cantarell"),
+        local("Noto Sans"),
+        local("Droid Sans"),
+        local("Helvetica Neue"),
+        local("sans-serif");
+}
+
+@font-face {
+
+    font-family: system-mono;
+    font-style: normal;
+    font-weight: normal;
+    src: 
+        local("ui-monospace"),
+        local("Cascadia Mono"),
+        local("Segoe UI Mono"),
+        local("Liberation mono"),
+        local("Ubuntu Mono"),
+        local("Roboto Mono"),
+        local("Menlo"),
+        local("Monaco"),
+        local("Consolas"),
+        local("monospace");
+}
+
+@font-face { 
+    font-family: "icomoon";
+    font-weight: normal;
+    src: url(data:font/ttf;base64,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);
+}
+
+:root {
+
+    --p5-pink: #ed225d;
+    --p5-pink-light: #f1678e;
+    --p5-pink-extra-light: #f9b2c6;
+    --p5-green: #47b28f;
+
+    --size-xxxsmall: 0.125rem;
+    --size-tiny: var(--size-xxxsmall);
+    --size-xxsmall: 0.25rem;
+    --size-xsmall: 0.5rem;
+    --size-small: 0.75rem;
+    --size-normal: 1.0rem;
+    --size-medium: var(--size-normal);
+    --size-normal-em: 1.0em;
+    --size-medium-em: var(--size-normal-em);
+    --size-large: 1.5rem;
+    --size-xlarge: 2.0rem;
+    --size-xxlarge: 4.0rem;
+    --size-huge: var(--size-xxlarge);
+
+    --font-size-xsmall: var(--size-xsmall);
+    --font-size-small: var(--size-small);
+    --font-size-normal: var(--size-normal);
+    --font-size-medium: var(--font-size-normal);
+    --font-size-normal-em: var(--size-normal-em);
+    --font-size-medium-em: var(--size-medium-em);
+    --font-size-large: var(--size-large);
+    --font-size-xlarge: var(--size-xlarge);
+    --font-size-xxlarge: var(--size-xxlarge);
+    --font-size-huge: var(--font-size-xxlarge);
+
+    --font-family-sans: system-sans;
+    --font-family-mono: system-mono;
+    --font-family-icon: "icomoon";
+
+    --preloader-width: 4rem;
+    --preloader-height: var(--preloader-width);
+    --preloader-background: #222222;
+    --preloader-anim-base-color: #cccccc;
+    --preloader-anim-color: var(--p5-pink-light);
+    --preloader-text-color: #818997;
+    --preloader-font-size: 1em;
+
+    --wallpaper-color: #ddd;
+
+    --screen-padding-top: 3rem;
+    --screen-padding-right: 3rem;
+    --screen-padding-bottom: 3rem;
+    --screen-padding-left: 3rem;
+
+    --canvas-background: #ffffff;
+    --canvas-shadow: 0 64px 64px -16px rgba(64, 64, 64, 0.25);
+
+    --scrollbar-width: thin;
+    --scrollbar-track-color: transparent;
+    --scrollbar-thumb-color: #222222;
+    --scrollbar-thumb-color-hover: #ff6eff;
+
+    /* ------------------------------------------------------------------------------------------ */
+
+    --gui-animation-speed: 450ms;
+
+    --gui-button-size: calc(2 * var(--size-normal));
+    --gui-button-icon-size: calc(0.66 * var(--gui-button-size));
+    
+    --gui-width: 0px; /* set in gui.js - depends on lil-gui width */
+    --gui-scale: 1.0; /* set as parameter */
+
+
+    /* theme - default */
+    /* ------------------------------------------------------------------------------------------ */
+
+    --gui-background-color: #444;
+    --gui-text-color: #ebebeb;
+	--gui-title-background-color: #333;
+	--gui-title-text-color: #ebebeb;
+	--gui-widget-color: #424242;
+	--gui-hover-color: #4f4f4f;
+	--gui-focus-color: #595959;
+	--gui-number-color: #2cc9ff;
+	--gui-string-color: #a2db3c;
+
+    --gui-font-size: 11px;
+    --gui-input-font-size: 11px;
+    --gui-font-family: var(--font-family-sans);
+    --gui-font-family-mono: var(--font-family-mono);
+	--gui-padding: 4px;
+	--gui-spacing: 4px;
+    --gui-title-height: calc(var(--gui-widget-height) + var(--gui-spacing) * 1.25);
+    --gui-name-width: 45%;
+    --gui-slider-knob-width: 2px;
+    --gui-slider-input-width: 27%;
+    --gui-color-input-width: 27%;
+    --gui-slider-input-min-width: 45px;
+    --gui-color-input-min-width: 45px;
+    --gui-folder-indent: 7px;
+    --gui-widget-padding: 0 0 0 3px;
+    --gui-widget-border-radius: 3px;
+    --gui-checkbox-size: calc(0.75 * var(--gui-widget-height));
+    --gui-scrollbar-width: 5px;
+
+	--gui-widget-height: 24px;
+
+    --gui-button-color: var(--gui-text-color);
+    --gui-button-bgcolor: var(--gui-background-color);
+    --gui-header-shadow: 0 1px 5px rgba(0, 0, 0, 0.75); 
+    --gui-footer-shadow: 0 -1px 5px rgba(0, 0, 0, 0.75);
+    --gui-widget-shadow: 1px 1px 2px #111,-1px -1px 2px #999;
+    --gui-widget-shadow: 0 1px 10px rgba(255, 255, 255, 0.5);
+    --gui-widget-shadow: 0 1px 5px rgba(0, 0, 0, 0.75);
+
+    --gui-icon-button-height: 2.5rem;
+    --gui-icon-button-font-size: calc(0.66 * var(--gui-icon-button-height));
+    --gui-icon-text-button-font-size: 1.4rem;
+
+    & .gui-theme-light {
+
+        --gui-background-color: #f6f6f6;
+        --gui-text-color: #666;
+        --gui-title-background-color: #efefef;
+        --gui-title-text-color: var(--gui-text-color);
+        --gui-widget-color: #eaeaea;
+        --gui-hover-color: #f0f0f0;
+        --gui-focus-color: #fafafa;
+        --gui-number-color: #07aacf;
+        --gui-string-color: #8da300;
+    
+        --gui-font-size: 11px;
+        --gui-input-font-size: 11px;
+        --gui-font-family: var(--font-family-sans);
+        --gui-font-family-mono: var(--font-family-mono);
+        --gui-padding: 4px;
+        --gui-spacing: 4px;
+        --gui-title-height: calc(var(--gui-widget-height) + var(--gui-spacing) * 1.25);
+        --gui-name-width: 45%;
+        --gui-slider-knob-width: 2px;
+        --gui-slider-input-width: 27%;
+        --gui-color-input-width: 27%;
+        --gui-slider-input-min-width: 45px;
+        --gui-color-input-min-width: 45px;
+        --gui-folder-indent: 7px;
+        --gui-widget-padding: 0 0 0 3px;
+        --gui-widget-border-radius: 3px;
+        --gui-checkbox-size: calc(0.75 * var(--gui-widget-height));
+        --gui-scrollbar-width: 5px;
+    
+        --gui-widget-height: 24px;
+    
+        --gui-button-color: var(--gui-text-color);
+        --gui-button-bgcolor: var(--gui-background-color);
+        --gui-header-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); 
+        --gui-footer-shadow: 0 -1px 5px rgba(0, 0, 0, 0.25);
+        --gui-widget-shadow: 1px 1px 2px #aaa,-1px -1px 2px #fff;
+        --gui-widget-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+
+        --gui-icon-button-height: 2.5rem;
+        --gui-icon-button-font-size: calc(0.66 * var(--gui-icon-button-height));
+        --gui-icon-text-button-font-size: 1.4rem;    
+    }
+}
+
+/* ============================================================================================== */ 
+
+.lil-gui {
+
+    /* colors */
+
+    --background-color: var(--gui-background-color);
+	--text-color: var(--gui-text-color);
+	--title-background-color: var(--gui-title-background-color);
+	--title-text-color: var(--gui-title-text-color);
+	--widget-color: var(--gui-widget-color);
+	--hover-color: var(--gui-hover-color);
+	--focus-color: var(--gui-focus-color);
+	--number-color: var(--gui-number-color);
+	--string-color: var(--gui-string-color);
+
+    /* others */
+
+    --font-size: var(--gui-font-size);
+    --input-font-size: var(--gui-input-font-size);
+    --font-family: var(--gui-font-family);
+    --font-family-mono: var(--gui-font-family-mono);
+	--padding: var(--gui-padding);
+	--spacing: var(--gui-spacing);
+    --title-height: var(--gui-title-height);
+    --name-width: var(--gui-name-width);
+    --slider-knob-width: var(--gui-slider-knob-width);
+    --slider-input-width: var(--gui-slider-input-width);
+    --color-input-width: var(--gui-color-input-width);
+    --slider-input-min-width: var(--gui-slider-input-width);
+    --color-input-min-width: var(--gui-color-input-min-width);
+    --folder-indent: var(--gui-folder-indent);
+    --widget-padding: var(--gui-widget-padding);
+    --widget-border-radius: var(--gui-widget-border-radius);
+    --checkbox-size: var(--gui-checkbox-size);
+    --scrollbar-width: var(--gui-scrollbar-width);
+
+	--widget-height: var(--gui-widget-height);
+}
+

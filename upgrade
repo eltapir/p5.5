@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" = "--pnpm" ]; then
+    npm i -g pnpm
+    npm i -g npm-check-updates
+fi
+
+ncu -u
+pnpm install
+
