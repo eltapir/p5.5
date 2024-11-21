@@ -32,7 +32,7 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
    with two parameters.
 
    parameter #1:
-   The diagonal size of your monitor where the browser is running.
+   The diagonal size (in inches) of your monitor where the browser is running.
    <br>
    <br>
    parameter #2:
@@ -41,7 +41,7 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
     p5.initMetrics(16, 300);
     ```
 
-4. The rest is bussiness as usual, except for the createCanvas() function.
+4. The rest is bussiness as usual, except for createCanvas().
    The createCanvas() function takes 3 parameters:<br>
    parameter #1: The canvas width in pixels<br>
    parameter #2: The canvas height in pixels<br>
@@ -50,14 +50,12 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
    (for a list of options, see below)
 
     ```
-    p5.initMetrics(31.5, 300);
+    p5.initMetrics(16, 300);
 
     function setup() {
 
         // mmpx => converts millimeters to pixels
-        createCanvas(mmpx(200), mmpx(100), {
-            seed: 1234
-        });
+        createCanvas(mmpx(200), mmpx(100), {});
     }
 
     function draw() {
