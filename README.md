@@ -172,3 +172,6 @@ The extension is aimed at people who want to generate 2D art on a larger canvas.
 
 ### EXAMPLES:
 
+- [Basic](https://editor.p5js.org/ElTapir/sketches/6Fk4dSbbL)
+- [All defaults](https://editor.p5js.org/ElTapir/sketches/m8fN8a5dN)
+- [Tweak](https://editor.p5js.org/ElTapir/sketches/HkED3U-Ry)
