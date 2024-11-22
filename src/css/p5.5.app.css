@@ -111,7 +111,7 @@
             width: var(--gui-width);
 
             background-color: var(--gui-background-color);
-            background-color: hsl(from var(--gui-background-color) h s calc(l * 1.25));
+            /* background-color: hsl(from var(--gui-background-color) h s calc(l * 1.25)); */
     
             transition: transform var(--gui-animation-speed);
 

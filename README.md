@@ -211,3 +211,7 @@
 
     wallpaperBackground(color)          // color     : (optional) color for the wallpaper
                                         // return    : current wallpaper color
+
+    addGUI(title)                       // title     : title of the lil-gui tweak
+                                        // return    : lil-gui tweak (see lil-gui for more info)
+
