@@ -274,12 +274,6 @@ p5.prototype.noiseSeed = function($_noiseSeed) {
 }(p5.prototype.noiseSeed);
 
 
-// simplexSeed
-
-// no need to override simplexSeed
-// this.__simplexSeed is changed in p5.5.simplex.js
-
-
 // =================================================================================================
 // EXTEND P5 INSTANCE
 // =================================================================================================
