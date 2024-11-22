@@ -1,10 +1,10 @@
-# P5.5
+# P5.5 <span style="font-size: 0.8rem; font-weight: 400;">(early development stage, things can change. More/better documentation will come)
 ## p5.5.js is an addon for the p5.js library. It is a combination of a UI with panning and zooming and more nice things. The UI tweaks are an implementation of the [lil-gui.js](https://lil-gui.georgealways.com/) library. The hotkeys are made possible by using the [tinykeys.js](https://jamiebuilds.github.io/tinykeys/) library.
 
 ![p5.5.js screenshot](./screenshot/SCREENSHOT.jpg "P5.5 Screenshot")
 
 
-## The extension is aimed at people who want to generate 2D art on a larger canvas suited for printing. The panning and zooming makes it possible to always see the canvas in its entirety, or to show certain parts in detail. Exporting to a png file is just a button away.
+## The extension is aimed at people who want to generate 2D art on a larger canvas, suited for printing. The panning and zooming makes it possible to always see the canvas in its entirety, or to show certain parts in detail. Exporting to a png file is just a button away. Of course, p5.5.js can be used well for teaching purposes.
 
 
 ### CREDITS
@@ -16,7 +16,7 @@
 [tinykeys](https://jamiebuilds.github.io/tinykeys/) : &nbsp;Tiny but very nice library for keybindings
 
 
-### USAGE: &nbsp;<span style="font-size: 0.8em; font-weight: 400;">(see examples)
+### USAGE: &nbsp;<span style="font-size: 0.5em; font-weight: 400;">(see examples)
 
 1. In the index.html file, add the p5.5.js library after the p5.js library
     ```
@@ -167,6 +167,13 @@
 
 
 ### ADDED METHODS:
+
+    p5.extend(src, prtt, force, ign)    // Extends the p5 library
+                                        // src       : Object with properties and methods to add to p5
+                                        // prtt      : boolean : true => adds property to p5.prototype
+                                        //                       false => adds property to p5
+                                        // force     : boolean : forces overriding existing p5 property   
+                                        // ign       : Array of properties in the src to ignore
 
     screenPPI()                         // return    : Pixels Per Inch of the screen
                                         //           : depends on your settings in p5.initMetrics()
