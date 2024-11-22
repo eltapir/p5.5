@@ -130,8 +130,6 @@ const gui = {
 
         this.__guiHeader.querySelector('.pixels')
             .innerText = `${this.__cvsWidth.toLocaleString()}px / ${this.__cvsHeight.toLocaleString()}px`;
-        // this.__guiHeader.querySelector('.units')
-        //     .innerText = `${(this.pxmm(this.__cvsWidth).toFixed(2)).toLocaleString()}mm / ${(this.pxmm(this.__cvsHeight).toFixed(2)).toLocaleString()}mm`;
 
         this.__setCanvasSizeInUnits();
     },
