@@ -21,7 +21,7 @@
 1. In the index.html file, add the p5.5.js library after the p5.js library
     ```
     <script defer src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js">
-    <script defer src="p5.5.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/eltapir/p5.5@master/dist/p5.5.min.js"></script>
     ```
 
 2. Create an artwork.js file and add it in the html file after the p5.5.js script
