@@ -22,6 +22,8 @@ import { utilities } from './p5.5.utilities.js';
 import { ppi } from './p5.5.ppi.js';
 
 
+p5.prototype.registerMethod('init', () => {
+
 // =================================================================================================
 // P5 CLASS EXTENSIONS
 // =================================================================================================
@@ -290,3 +292,6 @@ p5.extend(utilities);
 
 p5.extend(ppi, false);
 
+console.log('xxx')
+
+});

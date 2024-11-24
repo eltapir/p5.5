@@ -11,7 +11,7 @@ import pkg from './package.json';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const sourceFolder = 'src';
-const outputFolder = 'lib';
+const outputFolder = 'dist';
 const baseName = path.resolve(__dirname, outputFolder, pkg.name) + (isProduction ? '.min' : '');
 
 export default [{
