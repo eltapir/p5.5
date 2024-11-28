@@ -18,7 +18,7 @@ p5.initMetrics(31.5, 300);
 // #############################################################################
 
 let lineWeightInMillimeters = 1;
-let textSizeInMullimeters = 7;
+let textSizeInMullimeters = 5;
 
 
 // #############################################################################
