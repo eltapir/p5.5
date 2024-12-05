@@ -1766,16 +1766,25 @@
       // public methods
       // ---------------------------------------------------------------------------------------------
 
-      initMetrics(displaySize, exportPPI = 0) {
+      initMetrics(displaySize, exportPPI = 0, forcedScreenPPI = 0) {
 
           if (!displaySize) {
 
               throw new Error(`The 'displaySize' argument is required.`);
           }
 
-          p5.__screenPPI = p5.__calculatePPI(
-              window.screen.width, window.screen.height, displaySize, devicePixelRatio
-          );
+          if (forcedScreenPPI === 0) {
+
+              p5.__screenPPI = p5.__calculatePPI(
+                  window.screen.width, window.screen.height, displaySize, devicePixelRatio
+              );
+
+          } else {
+
+              p5.__screenPPI = forcedScreenPPI;
+          }
+
+          console.log(p5.__screenPPI);
       
           p5.__exportPPI = exportPPI === 0 ? p5.__screenPPI : exportPPI;
       
