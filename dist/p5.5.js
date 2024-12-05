@@ -1784,7 +1784,7 @@
               p5.__screenPPI = forcedScreenPPI;
           }
 
-          console.log(p5.__screenPPI);
+          console.log('p5.__screenPPI:', p5.__screenPPI);
       
           p5.__exportPPI = exportPPI === 0 ? p5.__screenPPI : exportPPI;
       
