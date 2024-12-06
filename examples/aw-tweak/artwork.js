@@ -28,7 +28,8 @@ let textSizeInMullimeters = 5;
 function setup() {
 
     createCanvas(mmpx(200), mmpx(100), {
-        seed: 1234
+        seed: 1234,
+        guiTheme: 'dark'
     });
 
     // textAlign(CENTER);

@@ -1768,7 +1768,7 @@
 
       initMetrics(displaySize, exportPPI = 0, forcedScreenPPI = 0) {
 
-          if (!displaySize) {
+          if (!displaySize && forcedScreenPPI == 0) {
 
               throw new Error(`The 'displaySize' argument is required.`);
           }
@@ -1784,10 +1784,15 @@
               p5.__screenPPI = forcedScreenPPI;
           }
 
-          console.log('p5.__screenPPI:', p5.__screenPPI);
-      
+          
           p5.__exportPPI = exportPPI === 0 ? p5.__screenPPI : exportPPI;
-      
+          
+          console.log(
+              'screenPPI:', p5.__screenPPI,
+              ' - exportPPI:', p5.__exportPPI,
+              ' - devPixRatio:', devicePixelRatio
+          );
+
           p5.__metricsSet = true;
       },
       
