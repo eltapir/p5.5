@@ -32,12 +32,13 @@ function setup() {
         guiTheme: 'dark'
     });
 
-    // textAlign(CENTER);
-    // textSize(mmpx(textSizeInMullimeters));
-    // text(`If you entered the right parameters in p5.initMetrics(),`, width * 0.5, height * 0.5 - mmpx(10));
-    // text(`( see at the top of the source file 'artwork.js' )`, width * 0.5, height * 0.5 + mmpx(0));
-    // text(`you should see a canvas of 200 x 100 mm when zoomed 1:1`, width * 0.5, height * 0.5 + mmpx(10));
-    // text(`Use mouse buttons and mouse wheel to pan/zoom`, width * 0.5, height * 0.5 + mmpx(20));
+    textAlign(CENTER);
+    textSize(mmpx(textSizeInMullimeters));
+    text(`If you entered the right parameters in p5.initMetrics(),`, width * 0.5, height * 0.5 - mmpx(10));
+    text(`( see at the top of the source file 'artwork.js' )`, width * 0.5, height * 0.5 + mmpx(0));
+    text(`you should see a canvas of 200 x 100 mm when zoomed 1:1`, width * 0.5, height * 0.5 + mmpx(10));
+    text(`(!!! browser zoom level at 100%)`, width * 0.5, height * 0.5 + mmpx(20));
+    text(`Use mouse buttons and mouse wheel to pan/zoom`, width * 0.5, height * 0.5 + mmpx(30));
 
 
     // add a custom tweak (see lil-gui docs: https://lil-gui.georgealways.com/)
