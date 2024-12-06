@@ -686,7 +686,7 @@
   	"@rollup/plugin-node-resolve": "^15.3.0",
   	"@rollup/plugin-terser": "^0.4.4",
   	"postcss-preset-env": "^10.1.1",
-  	rollup: "^4.27.4",
+  	rollup: "^4.28.1",
   	"rollup-plugin-postcss": "^4.0.2"
   };
   var pkg = {
