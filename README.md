@@ -1,5 +1,5 @@
 # P5.5
-~~ (early development stage, things can change. More/better documentation will follow) ~~
+(early development stage, things can change. More/better documentation will follow)
 (more updates when p5.js v2.0 is ready)
 
 
